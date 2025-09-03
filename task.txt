@@ -1,0 +1,159 @@
+Take-Home Interview: Student Grade Management System
+
+Overview
+
+Create a simple full-stack application to manage student grades by uploading Excel files. This task
+tests your MongoDB, Node.js (Express), and React skills with a focus on Excel file processing and
+basic CRUD operations.
+
+
+
+GitHub repository with README
+Live deployed link (Netlify/Vercel frontend + Railway/Render backend)
+Submit working URL in your email
+
+
+The Challenge
+Build a web application that allows teachers to:
+1. Upload Excel files with student grade data
+2. View and manage student records
+3. Edit student information and grades
+4. Track upload history
+
+
+
+Technical Requirements
+
+Backend (Node.js + Express + MongoDB)
+RESTful API for file upload and data management
+MongoDB collection for student data
+Excel file processing (.xlsx only)
+Simple error handling
+
+
+Frontend (React)
+File upload interface for Excel files
+Student list display
+Edit student records
+Upload history
+
+
+Core Features to Implement (Minimal MVP)
+1. File Upload System
+
+Upload Excel (.xlsx) or CSV files - both formats supported
+Parse file - extract student data from first sheet/file
+Show success/error messages
+
+
+Required File Structure (exactly):
+
+Student_ID | Student_Name | Total_Marks | Marks_Obtained
+S501 | Quinn Flores | 100 | 100
+S502 | Morgan Nguyen | 100 | 52
+S503 | Morgan AAddams | 100 | 72
+
+2. Display Data
+Simple table showing all students
+Calculate percentage automatically (marks_obtained / total_marks * 100)
+Show total students count
+3. Basic Operations (Optional - if time permits)
+Edit a student's marks
+Delete a student record
+
+
+Database Schema Requirements
+Keep it simple - just one collection:
+
+Evaluation Criteria
+Technical Skills (80%)
+Working deployed application with live URL
+
+
+javascript
+// Students Collection
+{
+_id: ObjectId,
+student_id: "S001",
+studet_name: "John Doe",
+total_marks: 100,
+marks_obtained: 85,
+percentage: 85.0,
+created_at: Date
+}
+
+Excel upload functionality works correctly
+Data display shows students with calculated percentages
+MongoDB integration stores and retrieves data
+
+
+
+AI Usage & Problem-Solving (20%)
+Effective use of AI tools for coding assistance
+Clean, working code (even if AI-generated)
+Proper deployment with working links
+No Bonus Points - Just GetIt Working!
+Focus on the core functionality. A simple working app is better than a complex broken one.
+
+
+Deliverables
+MUST SUBMIT:
+1. GitHub Repository with complete source code
+2. Live Working URL - Deploy frontend and backend, send working link
+3. Sample Excel File with 5-10 student records for testing
+
+
+Deployment Options (pick any):
+Frontend: Netlify, Vercel, GitHub Pages
+Backend: Railway, Render, Heroku (free tiers)
+Database: MongoDB Atlas (free tier)
+
+Getting Started Tips (Use AIfor Everything!)
+1. Ask AI to generate starter code for React + Node.js + MongoDB
+2. Use AI for Excel parsing - ask for xlsx library implementation
+3. Get deployment help - ask AI how to deploy to Netlify/Railway
+4. Debug with AI - paste errors and get solutions
+5. Speed coding - describe what you want, let AI write it
+
+AI Prompts to Use:
+"Create a React component for Excel and CSV file upload"
+"Write Node.js code to parse both Excel and CSV files and save to MongoDB"
+"Help me deploy React app to Netlify and Node.js to Railway"
+"Create a simple student data table component"
+
+Sample Files for Testing
+CSV Format (students_data.csv):
+
+Student_ID,Student_Name, Total_Marks, Marks_Obtained
+
+S501,Quinn Flores, 100,100
+
+S502, Morgan Nguyen, 100,52
+
+S503, Morgan Adams, 100,72
+
+S504, Emery Flores, 100,66
+
+S505, Cameron Green, 100,81
+
+Or Excel Format with same structure
+
+
+
+Submission Guidelines
+Email Subject: "Take-Home Submission - [Your Name] - Student Grade System"
+
+
+Must Include:
+Live Working URL (most important!)
+GitHub repository link
+Brief note: "Built with AI assistance in [X] hours"
+We will test by:
+1. Visiting your live URL
+2. Uploading the sample Excel file
+3. Checking if data displays correctly with percentages
+Success = Working live demo. That's it!
+
+This is designed to be completed in 1 day with heavy AI assistance. Focus on getting a working
+deployed application rather than perfect code. Use AI tools extensively - that's part of the skill we're
+testing! 🚀
