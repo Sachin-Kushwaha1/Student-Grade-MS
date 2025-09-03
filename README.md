@@ -10,7 +10,9 @@ Backend: [https://student-grade-ms.onrender.com](https://student-grade-ms.onrend
 ## Features
 
 - 📁 Upload Excel (.xlsx) and CSV files with student data
-- 📊 View student records in a responsive table
+- �️ Each upload is tracked as a separate dataset with its own ID (upload history)
+- 🔗 Students are linked to their originating upload for scoped views/actions
+- �📊 View student records in a responsive table
 - ✏️ Edit student information and grades
 - 🗑️ Delete student records
 - 📈 Automatic percentage calculation
@@ -91,23 +93,39 @@ The application expects files with the following structure:
 
 ## API Endpoints
 
-- `GET /api/students` - Get all students
+- `GET /api/students` - Get all students (optionally `?upload_id=<id>` to filter)
 - `GET /api/students/:id` - Get student by ID
 - `POST /api/upload` - Upload Excel/CSV file
 - `PUT /api/students/:id` - Update student
 - `DELETE /api/students/:id` - Delete student
 
+Uploads management:
+
+- `GET /api/uploads` - List uploads with filename, date, and student count
+- `GET /api/uploads/:id/students` - Get students for a specific upload
+- `DELETE /api/uploads/:id` - Delete an upload and all associated students
+
 ## Database Schema
 
 ```javascript
+// uploads collection
 {
-  _id: ObjectId,
-  student_id: String,
-  student_name: String,
-  total_marks: Number,
-  marks_obtained: Number,
-  percentage: Number,
-  created_at: Date
+   _id: ObjectId,        // upload_id
+   filename: String,
+   uploaded_at: Date,
+   total_students: Number
+}
+
+// students collection
+{
+   _id: ObjectId,
+   student_id: String,
+   student_name: String,
+   total_marks: Number,
+   marks_obtained: Number,
+   percentage: Number,
+   upload_id: ObjectId, // ref: uploads._id
+   created_at: Date
 }
 ```
 

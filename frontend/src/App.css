@@ -16,6 +16,20 @@
   font-size: 2.5rem;
 }
 
+.App-header .nav {
+  margin-top: 10px;
+}
+
+.App-header .nav a {
+  color: #61dafb;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.App-header .nav a:hover {
+  text-decoration: underline;
+}
+
 .App-main {
   max-width: 1200px;
   margin: 0 auto;
@@ -131,6 +145,7 @@
   text-align: left;
   font-weight: 600;
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
   transition: background 0.2s;
 }
