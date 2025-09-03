@@ -11,16 +11,6 @@ Backend: [Railway/Render Link](#)
 
 - 📁 Upload Excel (.xlsx) and CSV files with student data
 - 📊 View student records in a responsive table
-- 🔃 Sort by any column (click header to sort ascending/descending)
-- ✏️ Edit student information and grades
-- 🗑️ Delete student records
-- 📈 Automatic percentage calculation
-- 📱 Mobile-responsive design
-
-## Features
-
-- 📁 Upload Excel (.xlsx) and CSV files with student data
-- 📊 View student records in a responsive table
 - ✏️ Edit student information and grades
 - 🗑️ Delete student records
 - 📈 Automatic percentage calculation
