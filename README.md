@@ -2,6 +2,21 @@
 
 A full-stack web application for managing student grades by uploading Excel/CSV files. Built with React frontend and Node.js/Express backend with MongoDB.
 
+## Live Demo
+
+Frontend: [Netlify/Vercel Link](#)
+Backend: [Railway/Render Link](#)
+
+## Features
+
+- 📁 Upload Excel (.xlsx) and CSV files with student data
+- 📊 View student records in a responsive table
+- 🔃 Sort by any column (click header to sort ascending/descending)
+- ✏️ Edit student information and grades
+- 🗑️ Delete student records
+- 📈 Automatic percentage calculation
+- 📱 Mobile-responsive design
+
 ## Features
 
 - 📁 Upload Excel (.xlsx) and CSV files with student data
@@ -46,53 +61,43 @@ The application expects files with the following structure:
 ### Backend Setup
 
 1. Navigate to the backend directory:
-
-```bash
-cd backend
-```
-
+   ```bash
+   cd backend
+   ```
 2. Install dependencies:
-
-```bash
-npm install
-```
-
+   ```bash
+   npm install
+   ```
 3. Create a `.env` file with your MongoDB connection string:
-
-```
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/student-grades
-```
-
+   ```env
+   PORT=5000
+   MONGODB_URI=your-mongodb-uri
+   ```
 4. Start the server:
-
-```bash
-npm start
-```
-
-The backend will run on `http://localhost:5000`
+   ```bash
+   npm start
+   ```
+   The backend will run on `http://localhost:5000`
 
 ### Frontend Setup
 
 1. Navigate to the frontend directory:
-
-```bash
-cd frontend
-```
-
+   ```bash
+   cd frontend
+   ```
 2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Start the development server:
-
-```bash
-npm start
-```
-
-The frontend will run on `http://localhost:3000`
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file and set your backend API URL:
+   ```env
+   REACT_APP_API_URL=http://localhost:5000/api
+   ```
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+   The frontend will run on `http://localhost:3000`
 
 ## API Endpoints
 
@@ -120,18 +125,20 @@ The frontend will run on `http://localhost:3000`
 
 ### Backend (Railway/Render)
 
-1. Connect your GitHub repository
+1. Connect your GitHub repository.
 2. Set environment variables:
    - `MONGODB_URI`: Your MongoDB Atlas connection string
    - `PORT`: Will be set automatically by the platform
+3. Deploy and copy your backend URL (e.g., `https://your-app.up.railway.app`)
 
 ### Frontend (Netlify/Vercel)
 
-1. Connect your GitHub repository
+1. Connect your GitHub repository.
 2. Set build command: `npm run build`
 3. Set publish directory: `build`
 4. Add environment variable:
    - `REACT_APP_API_URL`: Your deployed backend URL
+5. Deploy and copy your frontend URL (e.g., `https://your-app.netlify.app`)
 
 ## Sample Data
 
@@ -142,10 +149,10 @@ The repository includes sample data files:
 
 ## Usage
 
-1. Start both backend and frontend servers
-2. Open the application in your browser
-3. Upload an Excel or CSV file with student data
-4. View, edit, or delete student records as needed
+1. Start both backend and frontend servers locally, or visit your deployed links.
+2. Open the application in your browser.
+3. Upload an Excel or CSV file with student data.
+4. Sort, view, edit, or delete student records as needed.
 
 ## Built With AI Assistance
 
