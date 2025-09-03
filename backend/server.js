@@ -10,19 +10,23 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+// CORS (allow all by default, or restrict via CORS_ORIGIN env)
+const corsOrigins = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(",").map((o) => o.trim())
+  : "*";
+app.use(
+  cors({
+    origin: corsOrigins,
+  })
+);
 app.use(express.json());
 app.use(express.static("uploads"));
 
 // MongoDB connection
-require("dotenv").config();
 const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose
-  .connect(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(MONGODB_URI)
   .then(() => {
     console.log("Connected to MongoDB");
     // Start server only after DB is connected
