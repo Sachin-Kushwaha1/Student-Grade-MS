@@ -4,8 +4,8 @@ A full-stack web application for managing student grades by uploading Excel/CSV 
 
 ## Live Demo
 
-Frontend: [Netlify/Vercel Link](#)
-Backend: [Railway/Render Link](#)
+Frontend: [https://student-grade-ms.vercel.app](https://student-grade-ms.vercel.app)
+Backend: [https://student-grade-ms.onrender.com](https://student-grade-ms.onrender.com)
 
 ## Features
 
@@ -58,7 +58,7 @@ The application expects files with the following structure:
 - Node.js (v14 or higher)
 - MongoDB (local or MongoDB Atlas)
 
-### Backend Setup
+### Backend Setup (Local)
 
 1. Navigate to the backend directory:
    ```bash
@@ -79,7 +79,7 @@ The application expects files with the following structure:
    ```
    The backend will run on `http://localhost:5000`
 
-### Frontend Setup
+### Frontend Setup (Local)
 
 1. Navigate to the frontend directory:
    ```bash
@@ -123,22 +123,37 @@ The application expects files with the following structure:
 
 ## Deployment
 
-### Backend (Railway/Render)
+### Backend (Render)
 
-1. Connect your GitHub repository.
-2. Set environment variables:
+1. Create a new **Web Service** on [Render](https://render.com/).
+2. Set **Root Directory** to `backend`.
+3. Set **Build Command**: `npm install`
+4. Set **Start Command**: `npm start`
+5. Add environment variable:
    - `MONGODB_URI`: Your MongoDB Atlas connection string
-   - `PORT`: Will be set automatically by the platform
-3. Deploy and copy your backend URL (e.g., `https://your-app.up.railway.app`)
+6. Deploy and copy your backend URL (e.g., `https://student-grade-ms.onrender.com`)
 
-### Frontend (Netlify/Vercel)
+### Frontend (Vercel)
 
-1. Connect your GitHub repository.
-2. Set build command: `npm run build`
-3. Set publish directory: `build`
-4. Add environment variable:
-   - `REACT_APP_API_URL`: Your deployed backend URL
-5. Deploy and copy your frontend URL (e.g., `https://your-app.netlify.app`)
+1. Create a new project on [Vercel](https://vercel.com/).
+2. Set **Root Directory** to `frontend`.
+3. Set **Install Command**: `npm install`
+4. Set **Build Command**: `npm run build`
+5. Set **Output Directory**: `build`
+6. Add environment variable:
+   - `REACT_APP_API_URL`: Your deployed backend URL (e.g., `https://student-grade-ms.onrender.com/api`)
+7. Deploy and copy your frontend URL (e.g., `https://student-grade-ms.vercel.app`)
+
+### Environment Variables
+
+- **Backend:** Set in Render dashboard, not in code.
+- **Frontend:** Set in Vercel dashboard, not in code. Local `.env` is only for local development.
+
+### Troubleshooting
+
+- If you see "Network Error" in the frontend, make sure `REACT_APP_API_URL` is set to your live backend URL in Vercel.
+- If you see CORS errors, ensure your backend allows requests from your Vercel domain.
+- Always redeploy after changing environment variables.
 
 ## Sample Data
 
@@ -149,15 +164,17 @@ The repository includes sample data files:
 
 ## Usage
 
-1. Start both backend and frontend servers locally, or visit your deployed links.
+1. Start both backend and frontend servers locally, or visit your deployed links:
+   - [Frontend](https://student-grade-ms.vercel.app)
+   - [Backend](https://student-grade-ms.onrender.com)
 2. Open the application in your browser.
 3. Upload an Excel or CSV file with student data.
 4. Sort, view, edit, or delete student records as needed.
 
 ## Built With AI Assistance
 
-This project was built with extensive use of AI tools for rapid development and deployment.
+This project was built with extensive use of AI tools (GitHub Copilot, ChatGPT) for rapid development, code review, and deployment automation.
 
 ## License
 
-This project is created for interview purposes.
+This project is created for interview and educational purposes. Feel free to fork, modify, and use for learning or portfolio projects.
