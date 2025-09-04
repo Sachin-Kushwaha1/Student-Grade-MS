@@ -418,8 +418,14 @@ function Uploads() {
   }, []);
 
   const handleDeleteUpload = async (id) => {
-    if (!window.confirm("Delete this entire upload and all its students?"))
+    const typed = window.prompt(
+      "Type DELETE to permanently remove this upload and all its students.\nThis action cannot be undone.",
+      ""
+    );
+    if (!typed || typed.trim().toLowerCase() !== "delete") {
+      setMessage("Deletion cancelled. Type DELETE to confirm.");
       return;
+    }
     try {
       setLoading(true);
       await axios.delete(`${API_BASE_URL}/uploads/${id}`);
